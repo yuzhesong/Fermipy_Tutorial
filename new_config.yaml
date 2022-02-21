@@ -1,0 +1,37 @@
+binning:
+  binsperdec: 9
+  binsz: 0.1
+  coordsys: CEL
+  enumbins: null
+  roiwidth: 14.0
+data:
+  evfile: /data/users/ysong/fdata/lat_source_zmax90_gti_30MeV_500GeV.fits
+  ltcube: /data/users/ysong/fdata/lat_source_zmax90_ltcube_30MeV_500GeV.fits
+  scfile: /data/users/ysong/fdata/scfile_2021-06-04.fits
+fileio:
+  usescratch: false
+gtlike:
+  edisp: true
+  edisp_bins: -1
+  irfs: P8R3_SOURCE_V3
+model:
+  catalogs:
+  - /data/users/ysong/fdata/gll_psc_v27.fit
+  galdiff: /data/users/ysong/fdata/gll_iem_v07.fits
+  isodiff: /data/users/ysong/fdata/iso_P8R3_SOURCE_V3_v1.txt
+  src_radius: 20.0
+optimizer:
+  max_iter: 40
+  min_fit_quality: 2
+  optimizer: NEWMINUIT
+  tol: 0.05
+selection:
+  dec: 6.639806
+  emax: 500000
+  emin: 1000.0
+  evclass: 128
+  evtype: 3
+  ra: 140.558425
+  tmax: 644198000
+  tmin: 239160000
+  zmax: 90

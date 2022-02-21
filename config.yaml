@@ -1,0 +1,60 @@
+data :
+  evfile : '/data/users/ysong/fdata/lat_source_zmax90_gti_30MeV_500GeV.fits'
+  scfile : '/data/users/ysong/fdata/scfile_2021-06-04.fits'
+  #ltcube : '/data/users/ysong/fdata/lat_source_zmax90_ltcube_30MeV_500GeV.fits'
+
+binning:
+  roiwidth      : 14.0 #This is for the size of the square (inscribed in the circular ROI)
+  binsz           :  0.1 #pixel size
+  #Choose one of the two to describe how you want to bin the data in energy
+  binsperdec :  9   #How many bins within a decade (x to 10x) range
+  enumbins    : null #How many bins in total. Again, only specify one of the two. 
+  coordsys   : 'CEL' #Coordinate system, either CEL for celestial or GAL for Galactic
+
+selection:
+  #We need this section to cut the desired ROI out of the all-sky data. No need to introduce them... 
+  emin : 100
+  emax : 500000
+  zmax    : 90
+  evclass : 128
+  evtype  : 3
+  tmin    : 239160000
+  tmax    : 644198000
+  zmax    : 90 
+  ra:    140.558425
+  dec:   6.639806
+  
+  #The two below are commented out as we are already selecting from gti file, so no need to do this again.
+  #filter  : 'DATA_QUAL==1 && LAT_CONFIG==1'
+  #roicut  : 'no'
+  
+  
+model : #defines the xml model
+  # Diffuse components
+  galdiff  : '/data/users/ysong/fdata/gll_iem_v07.fits'
+  isodiff  : '/data/users/ysong/fdata/iso_P8R3_SOURCE_V3_v1.txt'
+
+  # List of catalogs to be used in the model.
+  catalogs :
+    - '/data/users/ysong/fdata/gll_psc_v27.fit'
+    #- '4FGL' #Exchangable with above.
+
+  # Include catalog sources within this distance from the ROI center
+  src_radius  : 20.0 #Includes the padding area. 
+
+
+gtlike:
+  edisp : True
+  edisp_bins : -1
+  irfs : P8R3_SOURCE_V3
+
+optimizer:
+  max_iter : 40
+  min_fit_quality : 2
+  optimizer: NEWMINUIT
+  tol : 0.05
+
+fileio:
+  usescratch: False
+  
+  
