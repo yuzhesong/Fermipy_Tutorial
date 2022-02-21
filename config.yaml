@@ -25,8 +25,8 @@ selection:
   dec:   6.639806
   
   #The two below are commented out as we are already selecting from gti file, so no need to do this again.
-  #filter  : 'DATA_QUAL==1 && LAT_CONFIG==1'
-  #roicut  : 'no'
+  filter  : 'DATA_QUAL==1 && LAT_CONFIG==1'
+  roicut  : 'no'
   
   
 model : #defines the xml model
