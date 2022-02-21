@@ -1,6 +1,6 @@
 data :
-  evfile : '/data/users/ysong/fdata/lat_source_zmax90_gti_30MeV_500GeV.fits'
-  scfile : '/data/users/ysong/fdata/scfile_2021-06-04.fits'
+  evfile : #'/data/users/ysong/fdata/lat_source_zmax90_gti_30MeV_500GeV.fits'
+  scfile : #'/data/users/ysong/fdata/scfile_2021-06-04.fits'
   #ltcube : '/data/users/ysong/fdata/lat_source_zmax90_ltcube_30MeV_500GeV.fits'
 
 binning:
